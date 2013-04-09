@@ -17,7 +17,7 @@ module Audited
         include Audited::Audit
 
 
-        serialize :audited_changes
+        serialize :audited_changes, ::ActiveRecord::Coders::Hstore
 
         default_scope         order(:version)
         scope :descending,    reorder("version DESC")
